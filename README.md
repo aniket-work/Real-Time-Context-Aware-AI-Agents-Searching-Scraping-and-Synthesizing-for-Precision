@@ -1,99 +1,65 @@
 # Real-Time Context-Aware AI Agents : Searching, Scraping, and Synthesizing for Precision
 
-Coz Enterprise Grade, Production AI Agentic System, Is What Ultimately Matters
+From Search to Synthesis: Building Your AI Business Intelligence Team
 
-TL;DR
+## TL;DR
 
-Built a system where multiple AI agents work together like a team of experts — one generates solutions, another evaluates them, a third does deep analysis, and a fourth ranks them. It’s like having multiple specialists working in parallel to solve complex business problems faster and smarter.
+Built a real-world system where multiple AI agents work together like a smart office team — one searches the web, another validates information, a third analyzes it, and a fourth makes recommendations. It’s like having round-the-clock AI assistants that help businesses make smarter decisions faster.
 
-Full Article : [https://medium.com/@learn-simplified/Real-Time-Context-Aware-AI-Agents-Searching-Scraping-and-Synthesizing-for-Precision-0b9a47a38698
+Full Article : [https://medium.com/@learn-simplified/real-time-context-aware-ai-agents-searching-scraping-synthesizing-for-precision-d09a6165b250
 
+
+## Introduction
+Picture having a team of tireless assistants who could search the entire internet, gather relevant information, analyze it, and give you precise answers — all in real-time. That’s not science fiction anymore. This article shows you how to build exactly that using AI agents that work together like a well-oiled machine. We’re not just talking about basic chatbots; we’re talking about AI assistants that understand context, learn from their searches, and deliver precise, actionable insights.
 
 ## What's This Project About
 
-This article shows you how to build a system where AI agents work together to solve complex problems. Think of it like a assembly line for problem-solving:
+This article is your practical guide to building a system of AI agents that work together intelligently. Think of it like assembling a smart task force:
 
-- The first agent generates multiple possible solutions
-- The second agent evaluates each solution’s feasibility
-- The third agent does deep analysis on the implications
-- The fourth agent ranks solutions based on all the analysis
-
-What makes this special is that these agents work in parallel — like having multiple experts working simultaneously instead of waiting for each one to finish before the next starts. I’ve built this using a graph-based approach where each node is a specialized AI agent, and they all communicate through a structured pipeline.
+- The Search Agent: Like your research assistant, finding relevant information across the web
+- The Validation Agent: Your fact-checker, making sure the information is reliable
+- The Analysis Agent: Your analyst, breaking down complex information into understandable insights
+- The Synthesis Agent: Your executive assistant, putting everything together in a clear, actionable format
+- The best part? These agents work in parallel — while one is searching, another is analyzing, making the whole process lightning fast. We’ll show you how to build this system step by step, using real code and practical examples.
 
 ## Why Work on It?
 
-In today’s fast-paced business environment, making quick yet well-thought-out decisions is crucial. While this article uses a fictional company as an example, the principles apply to real business challenges. Here’s what you’ll learn:
+In today’s business world, making quick, well-informed decisions is crucial. Consider these scenarios:
 
-- How to break down complex problems into smaller, manageable pieces
-- Ways to use AI for parallel processing of solutions
-- Techniques for combining multiple AI perspectives into coherent recommendations
-- Methods for scaling decision-making processes without sacrificing quality
+ - Market research that used to take weeks can be done in hours
+ - Customer feedback analysis that took days happens in minutes
+ - Competitive analysis that required teams of analysts can be automated 
+While our example uses a fictional company, the principles and code we share are real and battle-tested. You’ll learn:
 
-The system I’ve built demonstrates how businesses can:
-
-- Automate complex analysis while maintaining high standards
-- Get multiple perspectives on problems simultaneously
-- Reduce decision-making time through parallel processing
-- Ensure consistent evaluation of solutions
-- Scale their problem-solving capabilities
+ - How to break down complex business problems into manageable pieces
+ - Ways to use AI for parallel processing of information
+ - Techniques for combining multiple AI perspectives into actionable insights
+ - Methods for scaling your decision-making processes without losing quality
 
 ## Architecture
 ![Design Diagram](design_docs/design.png)
 
 # AI Agents Architecture Flow Explanation
 
-Looking at complex business problem-solving, thought a team of AI agents working in parallel would be more efficient than a single agent. Here's how the architecture flows:
+The design follows a four-layer architecture that I organized to handle web search, analysis, and response generation efficiently:
 
-## User Interface Layer
-Started with a web interface where users input their problems and key considerations. Made it interactive because business users need a clean, straightforward way to describe their challenges. The interface captures both the core problem and specific factors that need attention.
+User Interface Layer: The Streamlit web UI serves as the main entry point. Users input their queries here, and it immediately shows both their results and detailed processing logs. I chose Streamlit because it provides a clean, professional interface without complex frontend development.
 
-## State Management 
-Built a two-part state management system:
-- Overall State: Tracks the entire problem-solving journey
-- Solution State: Manages individual solution progress
-This split helps track both the big picture and specific details as solutions move through the pipeline.
+Configuration Layer: I separated the configuration into two key files:
 
-## AI Agents Processing Pipeline
-Structured the processing like an expert consulting team:
+config.yaml handles all model settings like temperature, context size, and technical parameters
+prompts.json stores system prompts and instructions This separation lets users modify behavior without touching the code. When someone wants to tune the AI’s responses or adjust the model, they simply update these files.
+Core Processing Layer: This is where the real work happens. I built it as a pipeline with four key components:
 
-### Generation Phase
-Created a dedicated agent for generating initial solutions. This agent works like a brainstorming expert, taking the problem and considerations to produce multiple potential approaches. Designed it to generate three distinct solutions to ensure variety in approaches.
-
-### Parallel Evaluation
-Set up three evaluation agents running simultaneously because waiting for sequential evaluation wastes time. Each agent thoroughly assesses one solution across multiple dimensions:
-- Technical feasibility
-- Resource requirements
-- Implementation challenges
-- Risk factors
-- Success metrics
-
-### Deep Analysis
-Added another layer of parallel processing with three deep analysis agents. Each one digs into:
-- Long-term impacts
-- Scalability potential
-- Strategic alignment
-- Market implications
-Having parallel analysis speeds up the process without sacrificing thoroughness.
-
-### Ranking Phase
-Wrapped up with a ranking agent that consolidates all the analysis. This agent weighs different factors and produces a prioritized list of solutions with clear justifications. Think of it as the senior partner making final recommendations after reviewing all the detailed work.
-
-## Results & Logging
-Created two output streams:
-1. Ranked Solutions: Clear, actionable recommendations for the user
-2. Session Logs: Detailed records of the entire decision-making process
-
-Added comprehensive logging because understanding how decisions were made becomes crucial when implementing solutions or making adjustments later.
-
-# Key Design Decisions
-The parallel processing approach came from realizing that in real consulting teams, different experts can evaluate different aspects simultaneously. Why make AI work sequentially when it can handle multiple streams?
-
-Kept the state management separate from processing to make the system more maintainable and scalable. This way, adding new types of analysis or changing the evaluation criteria doesn't require rebuilding the entire pipeline.
-
-The color coding in the diagram represents different functional areas. Used cool colors for input/output processes and warmer colors for analysis phases to make the flow intuitive for technical teams reviewing the architecture.
+LLM Wrapper — Handles all direct interactions with the AI model
+Search Module — Performs web searches and gathers initial data
+Web Scraper — Extracts relevant content from found web pages
+Content Parser — Processes and structures the scraped information
+Response Generator — Creates the final, coherent response
+I designed this pipeline to work in parallel when possible, speeding up the overall process. Each component can work independently but maintains a clean data flow between stages.
 
 
-# Tutorial: How To Build AI Agents To Decompose Tasks &amp; Execute Parallel via Map Reduce
+# Tutorial: Real-Time Context-Aware AI Agents : Searching, Scraping, and Synthesizing for Precision
 
 ## Prerequisites
 - Python installed on your system.
@@ -122,7 +88,7 @@ The color coding in the diagram represents different functional areas. Used cool
 
 **Install Project Dependencies:**
 
-Follow these steps to set up and run the  "Agents To Decompose Tasks &amp; Execute Parallel via Map Reduce"
+Follow these steps to set up and run the  "Real-Time Context-Aware AI Agents : Searching, Scraping, and Synthesizing for Precision"
 
 1. Navigate to your project directory:
    ```
@@ -137,7 +103,7 @@ Follow these steps to set up and run the  "Agents To Decompose Tasks &amp; Execu
    This command installs all the necessary Python packages listed in the requirements.txt file.
 
 
-## Run - Hands-On Guide: How To Build AI Agents To Decompose Tasks &amp; Execute Parallel via Map Reduce
+## Run - Hands-On Guide: Real-Time Context-Aware AI Agents : Searching, Scraping, and Synthesizing for Precision
 
    ```bash 
      
@@ -148,4 +114,4 @@ Follow these steps to set up and run the  "Agents To Decompose Tasks &amp; Execu
 
 ## Conclusion and Next Steps
 
-Congratulations! You've just Built - AI Agents To Decompose Tasks &amp; Execute Parallel via Map Reduce
+Congratulations! You've just Built - Real-Time Context-Aware AI Agents : Searching, Scraping, and Synthesizing for Precision
