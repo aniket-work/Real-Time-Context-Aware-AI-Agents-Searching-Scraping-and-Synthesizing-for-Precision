@@ -1,7 +1,4 @@
-# Real-Time Context-Aware AI Agents :  Searching, Scraping, and Synthesizing for Precision
-
-
-# How To Build AI Agents To Decompose Tasks &amp; Execute Parallel via Map Reduce
+# Real-Time Context-Aware AI Agents : Searching, Scraping, and Synthesizing for Precision
 
 Coz Enterprise Grade, Production AI Agentic System, Is What Ultimately Matters
 
@@ -145,10 +142,8 @@ Follow these steps to set up and run the  "Agents To Decompose Tasks &amp; Execu
    ```bash 
      
       # Run 
-      python Web-LLM.py 
-      
-      /<YOUR_QUERY>   <enter>  CNTR+Z  <enter>      
-      
+      streamlit run app.py      
+                  
    ```
 
 ## Conclusion and Next Steps

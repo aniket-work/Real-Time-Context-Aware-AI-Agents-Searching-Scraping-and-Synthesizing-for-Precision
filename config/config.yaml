@@ -1,0 +1,30 @@
+# Model Configuration
+llm:
+  type: "ollama"  # Options: 'llama_cpp', 'ollama'
+  settings:
+    base_url: "http://localhost:11434"
+    model_name: "llama3.1:latest"
+    temperature: 0.7
+    top_p: 0.9
+    n_ctx: 20000
+    stop: ["User:", "\n\n"]
+
+# Paths Configuration
+paths:
+  logs: "logs"
+  output: "output"
+  model: "/filepath/to/your/llama.cpp/model"
+
+# UI Configuration
+ui:
+  title: "Web-LLM Assistant"
+  max_width: 1200
+  show_logs: true
+  layout: "wide"
+  initial_sidebar_state: "expanded"
+
+# Search Configuration
+search:
+  max_results: 10
+  max_retries: 3
+  timeout: 30
